@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTMX Todo List Demo</title>
+    <script src="https://unpkg.com/htmx.org"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>HTMX Todo List</h1>
+    <ul id="todo-list">
+        <li><input type="checkbox" id="todo1"><label for="todo1">Finish slides for Coffee and Code Presentation</label></li>
+        <li><input type="checkbox" id="todo2"><label for="todo2">Buy a birthday present for wifey</label></li>
+        <li><input type="checkbox" id="todo3"><label for="todo3">Watch a YouTube video on Tailwind CSS</label></li>
+        <li><input type="checkbox" id="todo4"><label for="todo4">Meditate for 10 minutes before bed</label></li>
+    </ul>
+    <button hx-get="http://localhost:5000/new-todo" hx-target="#todo-list" hx-swap="beforeend">
+        Add Todo Item
+    </button>
+</body>
+</html>
