@@ -1,8 +1,11 @@
-from flask import Flask
-from flask_cors import CORS
+from flask import Flask, render_template
 
 app = Flask(__name__)
-CORS(app)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 
 @app.route('/new-todo')
 def new_todo():
