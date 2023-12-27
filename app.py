@@ -17,8 +17,7 @@ def new_todo():
 
 @app.route('/lambda-todo')
 def lambda_todo():
-    response = requests.get("")
-    return response.text
+    return requests.get("").text
 
 if __name__ == '__main__':
     app.run(debug=True)
