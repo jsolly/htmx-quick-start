@@ -1,3 +1,3 @@
-# Coffee-and-Code-htmx
+# HTMX quick-start
 
-See video walkthrough here -> https://www.youtube.com/watch?v=Tqlaw4L4D8E
+Hit the period on your keyboard right now to open in codespaces and start playing around!
