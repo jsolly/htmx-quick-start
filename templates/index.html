@@ -3,23 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>HTMX Todo List Demo</title>
+    <!-- htmx -->
     <script src="https://unpkg.com/htmx.org"></script>
+    <!-- serverless extension -->
+    <script src="https://unpkg.com/htmx-serverless"></script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-
 </head>
 <body>
     <h1>HTMX Todo List</h1>
     <ul id="todo-list">
-        <li><input type="checkbox" id="todo1"><label for="todo1">Finish slides for Coffee and Code Presentation</label></li>
+        <li><input type="checkbox" id="todo1"><label for="todo1">Finish slides for HTMX Presentation</label></li>
         <li><input type="checkbox" id="todo2"><label for="todo2">Buy a birthday present for wifey</label></li>
         <li><input type="checkbox" id="todo3"><label for="todo3">Watch a YouTube video on Tailwind CSS</label></li>
         <li><input type="checkbox" id="todo4"><label for="todo4">Meditate for 10 minutes before bed</label></li>
     </ul>
     <button hx-get="/new-todo" hx-target="#todo-list" hx-swap="beforeend">
-        Add Todo Item
+        Add Todo Item (Flask)
     </button>
     <button hx-get="/lambda-todo" hx-target="#todo-list" hx-swap="beforeend">
         Add Todo Item (Lambda)
     </button>
+    <!-- Add todo via JS button -->
+    <button id="addTodoJS" hx-get="js:addTodo" hx-trigger="click" hx-target="#todo-list" hx-swap="beforeend" hx-ext="serverless">
+        Add Todo (JavaScript)
+    </button>
+
+    <script>
+    function addTodo(){
+        return `<li><input type="checkbox"> New Todo Via JavaScript</li>`;
+    }
+    </script>
 </body>
 </html>

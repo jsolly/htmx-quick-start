@@ -12,7 +12,7 @@ def index():
 
 @app.route('/new-todo')
 def new_todo():
-    return "<li><input type='checkbox'> new todo</li>"
+    return "<li><input type='checkbox'>New Todo Via Flask</li>"
 
 
 @app.route('/lambda-todo')

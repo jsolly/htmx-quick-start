@@ -1,1 +1,3 @@
-Flask==3.0.0
+Flask
+Flask-Cors
+requests
